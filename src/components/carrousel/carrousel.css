@@ -13,5 +13,7 @@ img {
 }
 .deslizar{
   display: flex;
-  
+  align-items: center;
+  gap: 3rem; 
+  font-size: 3rem;
 }
