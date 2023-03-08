@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 50rem;
+  
+}
+.containerCarrousel{
+  display: flex;
+  justify-content: center;
+}
+.deslizar{
+  display: flex;
+  
+}
