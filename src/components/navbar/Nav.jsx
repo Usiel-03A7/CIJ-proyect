@@ -1,9 +1,10 @@
 import React from 'react';
-import './App.css';
+import './Nav.css';
 
 function App() {
+  
   return (
-    <div className="navbar">
+    <nav className="navbar">
 
       <img src="./logo.jpeg" alt="" />
       <ul>
@@ -18,7 +19,7 @@ function App() {
         </li>
       </ul>
 
-    </div>
+    </nav>
 
   );
 }

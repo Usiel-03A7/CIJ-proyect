@@ -3,17 +3,21 @@
   padding: 0;
 }
 
-img {
-  width: 50rem;
+.containerCarrousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
   
 }
 .containerCarrousel{
   display: flex;
   justify-content: center;
-}
-.deslizar{
-  display: flex;
   align-items: center;
+  position: relative;
   gap: 3rem; 
+  width: 100%;
+  height: 80rem;
   font-size: 3rem;
+  margin-top: -12rem ;
 }

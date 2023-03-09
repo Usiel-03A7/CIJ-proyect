@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './carrousel.css';
-
+import app from '../../data/firebase'
 export default function Carrousel() {
+  
   const [img, setImg] = useState(1);
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -16,10 +17,9 @@ export default function Carrousel() {
     };
   }, [img]);
   return (
-    <div className="containerCarrousel">
-      <figure className="deslizar">
-        <img src={`/imgCarrousel/img${img}.jpeg`} alt="" />
-      </figure>
+    
+    <div className="containerCarrousel" id={app.name}>
+      <img src={`/imgCarrousel/img${img}.jpeg`} alt="" />
     </div>
   );
 }
