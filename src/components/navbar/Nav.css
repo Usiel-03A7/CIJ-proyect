@@ -27,25 +27,35 @@ a:hover{
   align-items: center;
   padding: 3rem 20rem ;
   z-index: 1;
-  /* color: #ffe8dc; */
-  transition: 250ms;
+  
   position: sticky;
-  background-color: transparent;
   font-size: 2em;
   font-weight: 600;
   text-transform: uppercase;
   
 }
+.navbar::before {
+  content: '';
+  position: absolute;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(255,155,113,1) 100%); 
+  z-index: -1;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 100%;
+  transition: opacity .5s ease;
+}
+
 .navbar> img {
   width: 7rem;
   border-radius: .8rem;
 
 }
-.navbar.transparent {
-background-color: transparent;
+.navbar.transparent::before {
+  opacity: 0;
 }
-.navbar.filled {
-  background: rgb(0,0,0);
-  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(255,155,113,1) 100%); 
+.navbar.filled::before {
+  opacity: 1;
 
 }
