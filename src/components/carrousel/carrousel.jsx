@@ -1,24 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import './carrousel.css';
-export default function Carrousel({ setNavColor }) {
-  const carrouselRef = useRef()
 
-  useEffect(()=>{
-    const interceptor = new IntersectionObserver(entries=> {
+function Carrousel({ setNavColor }) {
+  const carrouselRef = useRef();
+
+  useEffect(() => {
+    const interceptor = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
-        setNavColor('transparent')
-      }else {
-        setNavColor('filled')
+        setNavColor('transparent');
+      } else {
+        setNavColor('filled');
       }
-    }, {}); 
-    
+    }, {});
     interceptor.observe(carrouselRef.current);
-
-    return () =>  {
+    return () => {
       interceptor.unobserve(carrouselRef.current);
-    }
+    };
+  }, []);
 
-  },[]);
   const [img, setImg] = useState(1);
   useEffect(() => {
     const intervalId = setTimeout(() => {
@@ -36,11 +36,16 @@ export default function Carrousel({ setNavColor }) {
   return (
     <div className="containerCarrousel" ref={carrouselRef}>
       <img src={`/imgCarrousel/img${img}.jpeg`} alt="" />
-     <div className='carrouselInfo' >
-     <h1>Bienvenido</h1>
-      <p>Centros de integracion Juvenil, A.C. CJI Colima</p>
-     </div>
+      <div className="carrouselInfo">
+        <h1>Bienvenido</h1>
+        <p>Centros de integracion Juvenil, A.C. CJI Colima</p>
+      </div>
     </div>
-  
   );
 }
+
+Carrousel.propTypes = {
+  setNavColor: PropTypes.func.isRequired,
+};
+
+export default Carrousel;

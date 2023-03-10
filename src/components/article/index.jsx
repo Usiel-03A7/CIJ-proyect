@@ -1,5 +1,6 @@
-import React from "react";
+import React from 'react';
 import './article.css';
+
 export default function Article() {
   return (
     <article>
@@ -10,10 +11,11 @@ export default function Article() {
         <img src="" alt="" />
         <div className="articleBottomContent">
           <p>Titulo</p>
+          {/* eslint-disable-next-line max-len */}
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam, porro delectus sint adipisci architecto quia, a necessitatibus vel tempore in, nemo perferendis culpa. Reiciendis, voluptatum autem. Soluta eaque quo beatae?</p>
         </div>
         <img src="" alt="" />
       </div>
     </article>
-  )
+  );
 }
