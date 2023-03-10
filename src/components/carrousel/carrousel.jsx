@@ -1,11 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './carrousel.css';
-import app from '../../data/firebase'
-export default function Carrousel() {
-  
+export default function Carrousel({ setNavColor }) {
+  const carrouselRef = useRef()
+
+  useEffect(()=>{
+    const interceptor = new IntersectionObserver(entries=> {
+      if (entries[0].isIntersecting) {
+        setNavColor('transparent')
+      }else {
+        setNavColor('filled')
+      }
+    }, {}); 
+    
+    interceptor.observe(carrouselRef.current);
+
+    return () =>  {
+      interceptor.unobserve(carrouselRef.current);
+    }
+
+  },[]);
   const [img, setImg] = useState(1);
   useEffect(() => {
-    const intervalId = setInterval(() => {
+    const intervalId = setTimeout(() => {
       if (img > 6) {
         setImg(1);
       } else {
@@ -16,10 +32,15 @@ export default function Carrousel() {
       clearInterval(intervalId);
     };
   }, [img]);
+
   return (
-    
-    <div className="containerCarrousel" id={app.name}>
+    <div className="containerCarrousel" ref={carrouselRef}>
       <img src={`/imgCarrousel/img${img}.jpeg`} alt="" />
+     <div className='carrouselInfo' >
+     <h1>Bienvenido</h1>
+      <p>Centros de integracion Juvenil, A.C. CJI Colima</p>
+     </div>
     </div>
+  
   );
 }

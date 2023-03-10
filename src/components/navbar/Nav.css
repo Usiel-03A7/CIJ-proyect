@@ -1,6 +1,6 @@
 a{
   text-decoration: none;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 800;
   color: #fff;
 }
@@ -15,20 +15,20 @@ ul{
   margin: 0;
 }
 a:hover{
+  
   text-decoration: underline;
 }
 
 .navbar {
   display: flex;
   top: 0;
-  left: 0;
-  right: 0;
-  height: 10rem;
+  height: 7rem;
   justify-content: space-between;
   align-items: center;
-  margin: 1rem;
+  padding: 3rem 20rem ;
   z-index: 1;
   /* color: #ffe8dc; */
+  transition: 250ms;
   position: sticky;
   background-color: transparent;
   font-size: 2em;
@@ -37,7 +37,15 @@ a:hover{
   
 }
 .navbar> img {
-  width: 10rem;
+  width: 7rem;
   border-radius: .8rem;
+
+}
+.navbar.transparent {
+background-color: transparent;
+}
+.navbar.filled {
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(255,155,113,1) 100%); 
 
 }
