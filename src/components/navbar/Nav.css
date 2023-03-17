@@ -1,21 +1,19 @@
-a{
+.nav_link{
   text-decoration: none;
   font-size: 2rem;
   font-weight: 800;
   color: #fff;
 }
-li{
+.nav_links >li{
   list-style: none;
-  
 }
-ul{
+.nav_links{
   display: flex;
   gap: 2rem;
   padding: 0;
   margin: 0;
 }
-a:hover{
-  
+.nav_link:hover{
   text-decoration: underline;
 }
 
@@ -27,7 +25,6 @@ a:hover{
   align-items: center;
   padding: 3rem 20rem ;
   z-index: 1;
-  
   position: sticky;
   font-size: 2em;
   font-weight: 600;
@@ -38,7 +35,7 @@ a:hover{
   content: '';
   position: absolute;
   background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(255,155,113,1) 100%); 
+  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, #ff9b71 100%); 
   z-index: -1;
   left: 0;
   top: 0;
@@ -57,5 +54,47 @@ a:hover{
 }
 .navbar.filled::before {
   opacity: 1;
+
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    display: flex;
+    text-align: center;
+    padding: 1rem 2rem;
+    gap: 3rem;
+  }
+  
+
+  .navbar> img {
+    width: 4rem;
+    border-radius: .8rem;
+    
+  }
+  .nav_links {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 7rem;
+    right: 0;
+    background-color: #ff9b71;
+    display: grid;
+    place-items: center;
+    clip-path: circle(0% at top right);
+    transition: clip-path .4s;
+  }
+  .nav_link{
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+  .nav_links:target {
+    clip-path: circle(150% at top right);
+  }
+.nav-target svg {
+  width: 4rem;
+  height: 4rem;
+  padding: 1rem;
+  color: #ff9b71;
+}
 
 }
