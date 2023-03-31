@@ -1,0 +1,33 @@
+.container-fluter {
+  display: flex;
+  flex-direction: column; 
+  text-align: center;
+  gap: 3rem;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  margin: 0 auto;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+@media screen and (max-width: 768px) { 
+  .container-fluter{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-info {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+}
