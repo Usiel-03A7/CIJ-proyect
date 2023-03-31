@@ -13,6 +13,10 @@
   padding: 0;
   margin: 0;
 }
+.nav-target {
+  background: none;
+  border: none;
+}
 .nav_link:hover{
   text-decoration: underline;
 }
@@ -74,9 +78,12 @@
   .nav_links {
     position: fixed;
     left: 0;
-    bottom: 0;
-    top: 7rem;
+    bottom: -7rem;
+    top: 0;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
     right: 0;
+    z-index: 0;
     background-color: #ff9b71;
     display: grid;
     place-items: center;
@@ -91,10 +98,11 @@
     clip-path: circle(150% at top right);
   }
 .nav-target svg {
+  
   width: 4rem;
   height: 4rem;
   padding: 1rem;
-  color: #ff9b71;
+  color: #ffffff;
 }
 
 }
