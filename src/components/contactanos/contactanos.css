@@ -52,7 +52,7 @@
   }
   .contactanos_mapa iframe{
     /* margin: 0 auto; */
-    width: 40rem;
+    width: 100%;
     height: 40rem;
   }
   .iconos{

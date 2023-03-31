@@ -1,5 +1,4 @@
 import React from "react";
-import Mapa from "../mapa";
 import './contactanos.css'
 export default function Contactanos() {
   return (
