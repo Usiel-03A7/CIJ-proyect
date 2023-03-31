@@ -34,7 +34,7 @@ function Carrousel({ setNavColor }) {
   }, [img]);
 
   return (
-    <div className="containerCarrousel" ref={carrouselRef}>
+    <div className="containerCarrousel" id='carrousel' ref={carrouselRef}>
       <img src={`/imgCarrousel/img${img}.jpeg`} alt="" />
       <div className="carrouselInfo">
         <h1>Bienvenido</h1>
