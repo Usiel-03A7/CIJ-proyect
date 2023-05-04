@@ -38,7 +38,7 @@ function Carrousel({ setNavColor }) {
       <img src={`/imgCarrousel/img${img}.jpeg`} alt="" />
       <div className="carrouselInfo">
         <h1>Bienvenido</h1>
-        <p>Centros de integracion Juvenil, A.C. CJI Colima</p>
+        <p>Centros de integracion Juvenil, A.C. CIJColima</p>
       </div>
     </div>
   );
