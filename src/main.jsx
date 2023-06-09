@@ -1,18 +1,19 @@
 import React from 'react';
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import ReactDOM from 'react-dom/client';
-import Wrapper from './components/wrapper';
-import Article from './components/article';
-import Avisos from './components/avisos';
-import Footer from './components/footer';
-import Contactanos from './components/contactanos';
+import Auth from './components/auth';
+import Home from './components/home';
+import Admin from './components/admin';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Wrapper />
-    <Article />
-    <Avisos />
-    <Contactanos />
-    <Footer />
+    <BrowserRouter >
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/auth" element={<Auth />} />
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
 );
