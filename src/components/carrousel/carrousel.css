@@ -53,12 +53,13 @@
 
 .editable > div  * {
   height: 100%;
-  z-index: 2;
+  
 }
 
 .editable button {
   height: 100%;
-  z-index: 3;
+  cursor: pointer;
+  z-index: -4;
 }
 
 

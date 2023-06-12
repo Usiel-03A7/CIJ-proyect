@@ -8,6 +8,13 @@
   
 }
 
+.articleHead te{
+  font-size: 4rem;
+  border: none;
+  width: 100%;
+  
+}
+
 .articleHead>h2 {
   font-size: 4rem;
 
