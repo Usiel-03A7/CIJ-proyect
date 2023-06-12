@@ -30,10 +30,9 @@ export default function Article({isEditable, title, subtitle, text,id}) {
       <div className="articleBottom">
         <img src="" alt="" />
         <div className="articleBottomContent" >
-          {  isEditable ? <p contentEditable onBlur={editSubTitle}> {subtitle} </p>: <p >{title}</p>}
+          {  isEditable ? <p contentEditable onBlur={editSubTitle}> {subtitle} </p>: <p >{subtitle}</p>}
           {  isEditable ? <p contentEditable onBlur={editText}> {text} </p>: <p >{text}</p>}
         </div>
-        <img src="" alt="" />
       </div>
     </article>
   );

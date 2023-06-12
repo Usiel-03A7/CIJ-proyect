@@ -11,6 +11,9 @@ import app from '../../data/firebase';
 
 export default function Home() {
   const [articles, setArticles] = useState([]);
+  const [avisos, setAvisos] = useState([]);
+  
+
   useEffect(() => {
     const db = getFirestore(app);
     const getArticles = async () => {
@@ -19,6 +22,12 @@ export default function Home() {
       setArticles(data);
     };
     getArticles();
+    const getAvisos = async () => {
+      const snapshot = await getDocs(collection(db, 'avisos'));
+      const data = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+      setAvisos(data);
+    };
+    getAvisos();
   }, []);
   return (
     <>
@@ -31,7 +40,14 @@ export default function Home() {
           text={article.text}
         />
       ))}
-      <Avisos />
+      {avisos.map((avisos) => (
+        <Avisos
+          key={avisos.id}
+          subtitle={avisos.subtitle}
+          text={avisos.text}
+          img={avisos.img}
+        />
+      ))}
       <Contactanos />
       <Footer />
     </>

@@ -14,11 +14,11 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import app from '../../data/firebase.js'
 const auth = getAuth(app);
-
 const firestoredb = getFirestore(app);
 
 export default function Admin() {
   const [articles, setArticles] = useState([])
+  const [avisos, setAvisos] = useState([])
   const [navColor, setNavColor] = useState('trasnparent');
   const navColorMemo = useMemo(() => ({ navColor, setNavColor }), [navColor, setNavColor]);
  // Es un hook de la libreria React router que permite navegar en las rutas del proyecto
@@ -69,7 +69,19 @@ export default function Admin() {
         return {...doc.data(),id:doc.id}
       })
       setArticles(data)
-      console.log(data.length);
+        
+    })
+  }, [])
+
+  useEffect(()=>{
+    const avisosRef = collection(firestoredb, "avisos")
+    getDocs(avisosRef)
+    .then((snapshot)=>{
+      const data = snapshot.docs.map((doc)=>{
+        return {...doc.data(),id:doc.id}
+      })
+      setAvisos(data)
+        
     })
   }, [])
 
@@ -82,11 +94,10 @@ export default function Admin() {
       <Carrousel setNavColor={setNavColor} isEditable={true} />
     </NavColorContext.Provider>
     {...articles.map((article, index)=><Article key={article.id} id={article.id} isEditable={true} title={article.title} subtitle={article.subtitle} text={article.text}/>)}
-    <Avisos />
+
+    {...avisos.map((avisos, index)=><Avisos id={avisos.id} isEditable={true} subtitle={avisos.subtitle} text={avisos.text} img={avisos.img} />)}
     <Contactanos />
     <Footer />
-
-
 
       {/* <p>Admin jsjsjs</p>
       <button onClick={handdleLogOut}>Log out</button> */}
