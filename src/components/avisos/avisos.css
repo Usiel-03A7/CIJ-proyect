@@ -4,6 +4,7 @@
   padding: 0 30rem;
   align-items: center;
   margin-bottom: 4rem;
+  gap: 10rem;
 }
 
 .avisos .avisos_info {
@@ -50,8 +51,10 @@
 .avisos {
  display: flex;
  flex-direction: column;
+ padding: 5rem;
  gap: 9rem;
 }
+
 .avisos_info h2{
   color: #ff9b71;
   padding: 0  2rem;
