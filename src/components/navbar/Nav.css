@@ -16,6 +16,7 @@
 .nav-target {
   background: none;
   border: none;
+  display: none;
 }
 .nav_link:hover{
   text-decoration: underline;
@@ -97,12 +98,16 @@
   .nav_links:target {
     clip-path: circle(150% at top right);
   }
-.nav-target svg {
-  
-  width: 4rem;
-  height: 4rem;
-  padding: 1rem;
-  color: #ffffff;
-}
+
+  .nav-target svg {
+    width: 4rem;
+    height: 4rem;
+    padding: 1rem;
+    color: #ffffff;
+  }
+
+  .nav-target {
+    display: block;
+  }
 
 }
