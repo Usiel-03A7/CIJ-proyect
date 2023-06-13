@@ -9,11 +9,22 @@ export default function Footer() {
       </div>
 
       <div className="footer-info">
-        <h3 className="polololo">Dra. Carmen Fernández Cáceres Directora General de CIJContacto: cfernandez@cij.gob.mx </h3>
-        <h3 className="polololo">Dr. Ángel Prado GarcíaDirector de Operación y Patronatosaprado@cij.gob.mx</h3>
-
-        <h3 className="polololo">Mtro. Bruno Diaz NegreteDirectivo Normativodireccion.normativa@cij.gob.mx</h3>
-        <h3 className="polololo">Lic. Iván Rubén Rétiz Márquez Director Administrativoivan.retiz@cij.gob.mx</h3>
+        <div className="footerName">
+          <h3>Dra. Carmen Fernández Cáceres </h3>
+           <p>Directora General de CIJ</p>  
+           <p>cfernandez@cij.gob.m</p>x </div>
+        <div className="footerName">
+          <h3>Dr. Ángel h3rado García</h3>
+           <p>Director de Operación y Patronatos</p> a
+           prado@cij.gob.mx</div>
+        <div className="footerName">
+          <h3>Mtro. Bruno Diaz Negrete</h3> 
+          <p>Directivo Normativo</p> 
+          <p>direccion.normativa@cij.gob.mx</p></div>
+        <div className="footerName">
+          <h3>Lic. Iván Rubén Rétiz Márquez</h3> 
+          <p>Director Administrativo</p> 
+          <p>ivan.retiz@cij.gob.mx</p> </div>
       </div>
     </div>
   );
