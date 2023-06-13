@@ -46,7 +46,7 @@ export default function Home() {
             key={aviso.id}
             subtitle={aviso.subtitle}
             text={aviso.text}
-            img={aviso.img}
+            img={aviso.img?.display_url}
           />
         ))}
       </div>

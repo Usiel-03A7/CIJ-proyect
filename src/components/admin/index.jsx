@@ -99,10 +99,10 @@ export default function Admin() {
           <Avisos
             key={aviso.id}
             isEditable={true}
-            id={avisos.id}
+            id={aviso.id}
             subtitle={aviso.subtitle}
             text={aviso.text}
-            img={aviso.img}
+            img={aviso.img?.display_url}
           />
         ))}
       </div>

@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { useRef, useState } from "react"
 import { getFirestore, doc, updateDoc } from "firebase/firestore"
 import app from '../../data/firebase.js'
 const firestoredb = getFirestore(app);
@@ -6,9 +6,10 @@ import './avisos.css'
 
 export default function Avisos({ isEditable, subtitle, text, img, id }) {
   const inputRef = useRef()
-
-  async function upload() {
-    const image = document.getElementById('image').files[0]
+  const [imgUrl , setImgUrl] = useState(img)
+  async function uploadImg(e) {
+    
+    const image = e.target.files[0]
     
 
     const body = new FormData()
@@ -20,20 +21,14 @@ export default function Avisos({ isEditable, subtitle, text, img, id }) {
       method: "POST"
     })
     const { data } = await response.json()
+   
+    const docRef = doc(firestoredb, "avisos", id)
+    
+    updateDoc(docRef, {img: data});
 
-    const title = document.getElementById('title').value
+    setImgUrl(data.display_url);
 
-    const res = await fetch("/profileUs/create/post", {
-      body: JSON.stringify({
-        title,
-        image: data
-      }),
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    location.href = '/'
+
   }
 
   function editSubTitle(e) {
@@ -49,11 +44,11 @@ export default function Avisos({ isEditable, subtitle, text, img, id }) {
   }
 
   function isImgEmpy() {
-    if (!isEditable && !img) {
+    if (!isEditable && !imgUrl) {
       return null;
     }
 
-    if (!img) {
+    if (!imgUrl) {
       return (
         <div className="avisos_img">
           <input type="file" ref={inputRef} accept="image/png, image/jpeg" hidden />  
@@ -74,7 +69,7 @@ export default function Avisos({ isEditable, subtitle, text, img, id }) {
     }
     return (
       <div className="avisos_img">
-      <input type="file" ref={inputRef} accept="image/png, image/jpeg" hidden />  
+      <input type="file" ref={inputRef} accept="image/png, image/jpeg" hidden  onChange={uploadImg}/>  
       <div
         className="editImg"
         onClick={()=>{
@@ -87,7 +82,7 @@ export default function Avisos({ isEditable, subtitle, text, img, id }) {
         </svg>
         <p>Actualiza tu imagen</p>
       </div>
-       <img src={img} alt="#" />
+       <img src={imgUrl} alt="#" />
     </div>
     );
   }
