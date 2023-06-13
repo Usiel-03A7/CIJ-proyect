@@ -1,7 +1,6 @@
 .avisos {
   display: flex;
   flex-direction: row;
-  padding: 0 30rem;
   align-items: center;
   margin-bottom: 4rem;
   gap: 10rem;
@@ -54,7 +53,7 @@
  justify-content: center;
  align-items: center;
  padding: 5rem;
- gap: 9rem;
+ gap: 5rem;
 }
 
 .avisos_info h2{
@@ -64,11 +63,10 @@
 }
 
 .avisos_info p {
-    
   font-size: 1.8rem;
   display: flex;
   justify-content: center;
-  text-align: center;
+  text-align: justify;
 }
  
 }
