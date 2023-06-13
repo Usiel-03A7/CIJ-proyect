@@ -46,6 +46,7 @@
   border: dotted 3px #ff9b71;
   border-radius: 20px; 
   cursor: pointer;
+  transition: border 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 .uploadImg:hover {
   color: #ff9b71;

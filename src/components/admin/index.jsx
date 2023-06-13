@@ -94,8 +94,19 @@ export default function Admin() {
       <Carrousel setNavColor={setNavColor} isEditable={true} />
     </NavColorContext.Provider>
       {...articles.map((article, index)=><Article key={article.id} id={article.id} isEditable={true} title={article.title} subtitle={article.subtitle} text={article.text}/>)}
-
-      {...avisos.map((avisos, index)=><Avisos id={avisos.id} isEditable={true} subtitle={avisos.subtitle} text={avisos.text} img={avisos.img} />)}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '10rem' }} id="anuncios">
+        {avisos.map((aviso) => (
+          <Avisos
+            key={aviso.id}
+            isEditable={true}
+            id={avisos.id}
+            subtitle={aviso.subtitle}
+            text={aviso.text}
+            img={aviso.img}
+          />
+        ))}
+      </div>
+      {/* {...avisos.map((avisos, index)=><Avisos id={avisos.id} isEditable={true} subtitle={avisos.subtitle} text={avisos.text} img={avisos.img} />)} */}
     <Contactanos isEditable={true} />
     <Footer />
 
