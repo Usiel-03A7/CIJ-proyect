@@ -4,7 +4,12 @@
   text-align: center;
   gap: 3rem;
   width: 90%;
+  padding: 10rem;
+  font-size: 1.2rem;
   margin: 0 auto;
+}
+.container-fluter h2 {
+  font-size: 3rem;
 }
 
 .footer-info {
@@ -22,6 +27,8 @@
   .container-fluter{
     display: flex;
     flex-direction: column;
+    width: 70%;
+    padding: 0;
   }
   
   .footer-info {
