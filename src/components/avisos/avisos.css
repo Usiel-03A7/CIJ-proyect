@@ -51,6 +51,8 @@
 .avisos {
  display: flex;
  flex-direction: column;
+ justify-content: center;
+ align-items: center;
  padding: 5rem;
  gap: 9rem;
 }
@@ -58,9 +60,15 @@
 .avisos_info h2{
   color: #ff9b71;
   padding: 0  2rem;
+  font-size: 3rem;
 }
+
 .avisos_info p {
-  padding: 0 2rem;
+    
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
  
 }

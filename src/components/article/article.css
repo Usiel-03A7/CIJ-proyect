@@ -5,15 +5,9 @@
   padding-left: 25rem;
   padding-right: 25rem;
   padding-top: 4rem;
-  
 }
 
-.articleHead te{
-  font-size: 4rem;
-  border: none;
-  width: 100%;
-  
-}
+
 
 .articleHead>h2 {
   font-size: 4rem;
@@ -48,7 +42,7 @@
 @media screen and (max-width: 768px) {
   
   .articleHead {
-    padding: 5rem;
+    padding: 3rem;
     height: 25rem;
     margin-top: 2rem;
   }
@@ -71,8 +65,11 @@
   .articleBottomContent p:nth-child(2){
     text-align: start;
     font-size: 1.8rem;
+    
   }
-
+  .articleBottom {
+    padding: 3rem;
+  }
   /*  
   
   .articleHead {
