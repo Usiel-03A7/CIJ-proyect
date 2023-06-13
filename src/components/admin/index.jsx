@@ -93,10 +93,10 @@ export default function Admin() {
       <Navbar />
       <Carrousel setNavColor={setNavColor} isEditable={true} />
     </NavColorContext.Provider>
-    {...articles.map((article, index)=><Article key={article.id} id={article.id} isEditable={true} title={article.title} subtitle={article.subtitle} text={article.text}/>)}
+      {...articles.map((article, index)=><Article key={article.id} id={article.id} isEditable={true} title={article.title} subtitle={article.subtitle} text={article.text}/>)}
 
-    {...avisos.map((avisos, index)=><Avisos id={avisos.id} isEditable={true} subtitle={avisos.subtitle} text={avisos.text} img={avisos.img} />)}
-    <Contactanos />
+      {...avisos.map((avisos, index)=><Avisos id={avisos.id} isEditable={true} subtitle={avisos.subtitle} text={avisos.text} img={avisos.img} />)}
+    <Contactanos isEditable={true} />
     <Footer />
 
       {/* <p>Admin jsjsjs</p>

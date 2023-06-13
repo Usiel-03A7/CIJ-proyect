@@ -18,23 +18,31 @@
   padding: 5rem;
   align-items: center;
 }
-.iconos > a > svg {
+
+.iconos button, .iconos a {
+  background: #ff9b7100;;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+.iconos > a > svg, .iconos > button > svg  {
   width: 100%;
   height: 100%;
   fill: #fff;
 }
-.iconos > a {
+.iconos > a, .iconos > button {
   position: relative;
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
 }
-.iconos > a:hover {
-  /* box-shadow: 0 0 1rem 1rem #ff9b71; */
-  background: radial-gradient(circle at 100% 100%, #ff9b71 4rem, #c5846b 44rem);
+.iconos > a:hover, .iconos > button:hover {
+  background: #ff9b71;
+  box-shadow: 0 0 1rem 1rem #ff9b71;
 }
 
-.contactanos_mapa iframe{
+.contactanos_mapa iframe {
   background-color: #f0f8ff;
   /* margin: 0 auto; */
   width: 120rem;
