@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   gap: 5rem;
+  /* width: 100%; */
 }
 .contactanos_container > .icons-container h2 {
   text-align: center;
@@ -45,8 +46,8 @@
 .contactanos_mapa iframe {
   background-color: #f0f8ff;
   /* margin: 0 auto; */
-  width: 120rem;
-  height: 100rem;
+  /* width: ;
+  height: 100rem; */
 }
 
 @media screen and (max-width: 768px) {

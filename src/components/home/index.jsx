@@ -40,14 +40,16 @@ export default function Home() {
           text={article.text}
         />
       ))}
-      {avisos.map((avisos) => (
-        <Avisos
-          key={avisos.id}
-          subtitle={avisos.subtitle}
-          text={avisos.text}
-          img={avisos.img}
-        />
-      ))}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '10rem' }} id="anuncios">
+        {avisos.map((aviso) => (
+          <Avisos
+            key={aviso.id}
+            subtitle={aviso.subtitle}
+            text={aviso.text}
+            img={aviso.img}
+          />
+        ))}
+      </div>
       <Contactanos />
       <Footer />
     </>
