@@ -21,6 +21,12 @@
   gap: 2rem;
   margin-bottom: 4rem;
 }
+.footerName p {
+  font-size: 1.5rem;
+}
+.footerName p:first-of-type{
+  color: #ff9b71;
+}
 
 
 @media screen and (max-width: 768px) { 

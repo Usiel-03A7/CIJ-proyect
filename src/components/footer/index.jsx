@@ -11,20 +11,24 @@ export default function Footer() {
       <div className="footer-info">
         <div className="footerName">
           <h3>Dra. Carmen Fernández Cáceres </h3>
-           <p>Directora General de CIJ</p>  
-           <p>cfernandez@cij.gob.m</p>x </div>
+          <p>Directora General de CIJ</p>
+          <p>cfernandez@cij.gob.mx </p>
+        </div>
         <div className="footerName">
           <h3>Dr. Ángel h3rado García</h3>
-           <p>Director de Operación y Patronatos</p> a
-           prado@cij.gob.mx</div>
+          <p>Director de Operación y Patronatos</p>
+          <p>aprado@cij.gob.mx</p>
+        </div>
         <div className="footerName">
-          <h3>Mtro. Bruno Diaz Negrete</h3> 
-          <p>Directivo Normativo</p> 
-          <p>direccion.normativa@cij.gob.mx</p></div>
+          <h3>Mtro. Bruno Diaz Negrete</h3>
+          <p>Directivo Normativo</p>
+          <p>direccion.normativa@cij.gob.mx</p>
+        </div>
         <div className="footerName">
-          <h3>Lic. Iván Rubén Rétiz Márquez</h3> 
-          <p>Director Administrativo</p> 
-          <p>ivan.retiz@cij.gob.mx</p> </div>
+          <h3>Lic. Iván Rubén Rétiz Márquez</h3>
+          <p>Director Administrativo</p>
+          <p>ivan.retiz@cij.gob.mx</p>
+        </div>
       </div>
     </div>
   );
