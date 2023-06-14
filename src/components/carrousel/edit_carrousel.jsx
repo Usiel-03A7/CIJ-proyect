@@ -20,6 +20,7 @@ const db = getFirestore(app);
 export default function EditCarrousel() {
   const [img, setImg] = useState(1);
   const [info, setInfo] = useState({ title: '', subtitle: '' });
+  const [images, setImages] = useState([]);
 
   const titleRef = useRef();
   const subtitleRef = useRef();
@@ -58,12 +59,12 @@ export default function EditCarrousel() {
   };
 
   useEffect(() => {
-    // const getCarrousel = async () => {
-    //   const snapshot = await getDocs(query(collection(db, 'images'), [where('id', '!=', 'info')]));
-    //   const data = snapshot.docs.map((document) => ({ ...document.data(), id: document.id }));
-    //   setImg(data[0].img);
-    // };
-    // getCarrousel();
+    const getCarrousel = async () => {
+      const snapshot = await getDocs(query(collection(db, 'images'), [where('id', '!=', 'info')]));
+      const data = snapshot.docs.map((document) => ({ ...document.data(), id: document.id }));
+      setImages(data);
+    };
+    getCarrousel();
     const getInfo = async () => {
       const docRef = doc(db, 'images', 'info');
       const snapshot = await getDoc(docRef);
