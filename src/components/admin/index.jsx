@@ -1,5 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
-import Navbar from "../navbar/Nav";
+import React, { useEffect, useMemo, useState } from 'react';
 import Carrousel from "../carrousel/carrousel";
 import Footer from "../footer";
 import Contactanos from "../contactanos";
@@ -7,12 +6,12 @@ import Avisos from "../avisos"
 import Article from "../article"
 import {getFirestore, collection, doc, setDoc, getDocs} from "firebase/firestore"
 
-
-import NavColorContext from '../../contexts/nav_color';
+// import NavColorContext from '../../contexts/nav_color';
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import app from '../../data/firebase.js'
+import EditCarrousel from '../carrousel/edit_carrousel';
 const auth = getAuth(app);
 const firestoredb = getFirestore(app);
 
@@ -87,13 +86,8 @@ export default function Admin() {
 
   return (
     <>
-    {/* <Navbar /> */}
-
-    <NavColorContext.Provider value={navColorMemo}>
-      <Navbar />
-      <Carrousel setNavColor={setNavColor} isEditable={true} />
-    </NavColorContext.Provider>
-      {...articles.map((article, index)=><Article key={article.id} id={article.id} isEditable={true} title={article.title} subtitle={article.subtitle} text={article.text}/>)}
+      <EditCarrousel />
+      {articles.map((article, index)=><Article key={article.id} id={article.id} isEditable={true} title={article.title} subtitle={article.subtitle} text={article.text}/>)}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '10rem' }} id="anuncios">
         {avisos.map((aviso) => (
           <Avisos

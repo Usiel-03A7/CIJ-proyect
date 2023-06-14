@@ -12,7 +12,6 @@ import app from '../../data/firebase';
 export default function Home() {
   const [articles, setArticles] = useState([]);
   const [avisos, setAvisos] = useState([]);
-  
 
   useEffect(() => {
     const db = getFirestore(app);

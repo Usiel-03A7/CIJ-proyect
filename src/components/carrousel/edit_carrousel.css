@@ -1,0 +1,107 @@
+
+.containerCarrousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.containerCarrousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 3rem;
+  width: 100vw;
+  height: 80rem;
+  font-size: 3rem;
+  margin-top: -13rem;
+  z-index: 0;
+}
+
+.carrouselInfo {
+  position: absolute;
+  width: min(35rem, 100%);
+  z-index: 1;
+  left: 20rem;
+}
+
+.containerCarrousel::before{
+  content: '';
+  position: absolute;
+  background: rgb(0, 0, 0);
+  background: radial-gradient(circle, rgba(0, 0, 0, 0) 21%, rgba(31, 30, 30, 1) 100%);
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+.editable {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  height: 5rem;
+  right: 2rem;
+  bottom: 2rem;
+  gap: 2rem;
+}
+.editable > div {
+  /* margin-top: -1.4rem; */
+  font-size: 1rem;
+  height: 100%;
+  display: flex;
+  gap: 2rem
+}
+
+.editable > div  * {
+  height: 100%;
+  
+}
+
+.editable button {
+  height: 100%;
+  width: 5rem;
+  cursor: pointer;
+  padding: 1rem;
+  border: none;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.editable button:hover {
+  background: #e6e6e6;
+  color: #ff9b71;
+}
+
+.editable button svg path {
+  transition: fill 0.3s ease;
+}
+
+.editable button:hover svg path {
+  background: #e6e6e6;
+  fill: #ff9b71;
+}
+
+
+@media screen and (max-width: 768px) {
+  /* .containerCarrousel {
+    
+  } */
+  .carrouselInfo {
+    left: auto;
+    font-size: 2rem;
+  }
+  .carrouselInfo > * {
+    margin: 0 2rem;
+  }
+  /* make responsive img */ 
+  /* .containerCarrousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  } */
+
+}
+  

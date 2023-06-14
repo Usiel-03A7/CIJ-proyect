@@ -22,8 +22,7 @@ function Carrousel({ setNavColor, isEditable }) {
   }, []);
 
   const [img, setImg] = useState(1);
-  if (!isEditable){
-
+  if (!isEditable) {
     useEffect(() => {
       const intervalId = setTimeout(() => {
         if (img > 6) {
