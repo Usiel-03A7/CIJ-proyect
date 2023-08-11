@@ -86,6 +86,17 @@
   width: 10rem;
   height: 10rem;
 }
+.buttonDelete {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.buttonDelete svg {
+  transition: 0.3s ease-in-out fill;
+}
+.buttonDelete:hover svg {
+  fill: #ff9b71;
+}
 
 @media screen and (max-width: 768px) { 
 .avisos {
