@@ -49,7 +49,6 @@ export default function Avisos({ isEditable, subtitle, text, img, id }) {
     }
     const docRef = doc(firestoredb, "avisos", id)
     deleteDoc(docRef)
-    window.location.reload(true);
   }
 
   function isImgEmpy() {

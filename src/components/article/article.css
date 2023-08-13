@@ -43,11 +43,12 @@ article {
 .buttonAdd{
   border: solid 2px #ff9b71;
   border-radius: 10px;
-  height: 6rem;
   font-size: 2.5rem;
   background: transparent;
   cursor: pointer;
-  margin: 3rem 5rem  ;
+  /* margin: 3rem 5rem  ; */
+  margin: 3rem max(15%, 5rem);
+  padding: 2rem;
   transition: 0.3s ease-in-out background-color,0.3s ease-in-out color,0.3s ease-in-out border ;
 }
 

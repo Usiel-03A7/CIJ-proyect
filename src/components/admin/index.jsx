@@ -4,8 +4,7 @@ import Footer from "../footer";
 import Contactanos from "../contactanos";
 import Avisos from "../avisos"
 import Article from "../article"
-import {getFirestore, collection, doc, setDoc, getDocs} from "firebase/firestore"
-
+import {getFirestore, collection, doc, setDoc, getDocs, onSnapshot} from "firebase/firestore"
 // import NavColorContext from '../../contexts/nav_color';
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
@@ -27,6 +26,14 @@ export default function Admin() {
   function handdleLogOut (){
     auth.signOut()
   }
+  useEffect (()=>{
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+       navigate('/auth')
+      } 
+      // const uid = user.uid;
+    });
+  },[] )
   useEffect(()=>{
     const articlesRef = collection(firestoredb, "articles")
     getDocs(articlesRef)
@@ -42,14 +49,22 @@ export default function Admin() {
 
   useEffect(()=>{
     const avisosRef = collection(firestoredb, "avisos")
-    getDocs(avisosRef)
-    .then((snapshot)=>{
-      const data = snapshot.docs.map((doc)=>{
-        return {...doc.data(),id:doc.id}
-      })
-      setAvisos(data)
+    // getDocs(avisosRef)
+    // .then((snapshot)=>{
+    //   const data = snapshot.docs.map((doc)=>{
+    //     return {...doc.data(),id:doc.id}
+    //   })
+    //   setAvisos(data)
         
-    })
+    // })
+    
+    const unsub = onSnapshot(avisosRef, (snapshot) => {
+     const avisosDocuments = snapshot.docs.map(aviso => {
+      return {...aviso.data(), id:aviso.id}
+     })
+     setAvisos(avisosDocuments)
+    });
+    return unsub;
   }, [])
 
   return (

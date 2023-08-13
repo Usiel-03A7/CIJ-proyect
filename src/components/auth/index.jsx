@@ -30,7 +30,6 @@ export default function Auth() {
 
   useEffect(()=>{
     if(auth.currentUser){
-      console.log('Y ya nos vamos');
       navigate('/admin')
     }
   },[])
