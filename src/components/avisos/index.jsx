@@ -8,27 +8,17 @@ export default function Avisos({ isEditable, subtitle, text, img, id }) {
   const inputRef = useRef()
   const [imgUrl, setImgUrl] = useState(img)
   async function uploadImg(e) {
-
     const image = e.target.files[0]
-
-
     const body = new FormData()
     body.append("image", image)
-
     const response = await fetch("https://api.imgbb.com/1/upload?key=b6b6cd7dba0f5d7b4611ce869e0dd514", {
       body,
-
       method: "POST"
     })
     const { data } = await response.json()
-
     const docRef = doc(firestoredb, "avisos", id)
-
     updateDoc(docRef, { img: data });
-    
     setImgUrl(data.display_url);
-    
-
   }
   
   function editSubTitle(e) {
@@ -58,13 +48,11 @@ export default function Avisos({ isEditable, subtitle, text, img, id }) {
     if (!imgUrl) {
       return (
         <div className="avisos_img">
-          <input type="file" ref={inputRef} accept="image/png, image/jpeg" hidden />
+          <input type="file" ref={inputRef} accept="image/png, image/jpeg" hidden onChange={uploadImg} />
           <div
-
             className="uploadImg"
-
             onClick={() => {
-              inputRef.current.click()
+              inputRef.current.click();
             }}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-cloud-arrow-up" viewBox="0 0 16 16">
